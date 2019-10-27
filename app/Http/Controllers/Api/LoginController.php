@@ -36,7 +36,7 @@ class LoginController extends Controller
     {
         $creds = $request->only(['email', 'password']);
 
-        if($token = auth()->attempt($creds)){
+        if(!$token = auth()->attempt($creds)){
             return response()->json(['error' => 'Incorrect email/password']);
         }
 
