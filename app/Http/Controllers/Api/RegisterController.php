@@ -23,7 +23,7 @@ class RegisterController extends Controller
               'success' => true,
               'data'=>'You have '
             ];
-          return response()->json($response, 201);
+          return response()->json($response, 200);
         }
 
     }
