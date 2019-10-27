@@ -7,6 +7,7 @@ use JWTAuth;
 use JWTAuthException;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Resources\LoginResource;
 
 class LoginController extends Controller
 {
@@ -37,7 +38,7 @@ class LoginController extends Controller
 
         $token = auth()->attempt($creds);
 
-        return $token;
+        return LoginResource($token);
     }
 
 

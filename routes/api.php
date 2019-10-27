@@ -24,6 +24,9 @@ Route::post('user/login', 'Api\LoginController@login');
 
 Route::get('/users', 'UserController@list');
 
+Route::post('/blacklist', 'BlacklistController@create');
+Route::get('/blacklist', 'BlacklistController@create');
+
 Route::group([], function () {
 
     // all routes to protected resources are registered here

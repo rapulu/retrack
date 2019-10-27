@@ -21,7 +21,9 @@ class CreateBlacklistsTable extends Migration
             $table->string('facebook');
             $table->string('twitter');
             $table->string('instagram');
-            $table->string('description');
+            $table->string('image_url');
+            $table->string('report');
+            $table->string('gender');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
