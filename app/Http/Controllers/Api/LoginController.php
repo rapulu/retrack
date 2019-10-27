@@ -38,7 +38,7 @@ class LoginController extends Controller
 
         $token = auth()->attempt($creds);
 
-        return $token;
+        return response()->json(['token' => $token]);
     }
 
 
