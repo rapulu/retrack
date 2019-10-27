@@ -20,13 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware('auth:api')->post('/blacklist', 'BlacklistController@create');
 Route::middleware('auth:api')->get('/blacklist', 'BlacklistController@reports');
 
+Route::post('register', 'Api\RegisterController@register')->name('register');
 
+Route::post('login', 'Api\LoginController@login')->name('login');
 
-
-Route::post('user/register', 'Api\RegisterController@register')->name('register');
-
-Route::post('user/login', 'Api\LoginController@login')->name('login');
-
-Route::get('/users', 'UserController@list');
 
 
