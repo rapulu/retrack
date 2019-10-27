@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\LoginResource;
 use App\Http\Requests\LoginRequest;
+use App\Http\Controllers\Api\Controller;
 
 class LoginController extends Controller
 {
