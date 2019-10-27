@@ -17,6 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('auth:api')->post('/blacklist', 'BlacklistController@create');
+Route::middleware('auth:api')->get('/blacklist', 'BlacklistController@create');
+
+
+
 
 Route::post('user/register', 'Api\RegisterController@register');
 
@@ -24,17 +29,4 @@ Route::post('user/login', 'Api\LoginController@login');
 
 Route::get('/users', 'UserController@list');
 
-Route::post('/blacklist', 'BlacklistController@create');
-Route::get('/blacklist', 'BlacklistController@create');
-
-Route::group([], function () {
-
-    // all routes to protected resources are registered here
-    Route::get('users/list', function(){
-        $users = App\User::all();
-
-        $response = ['success'=>true, 'data'=>$users];
-        return response()->json($response, 201);
-    });
-});
 
