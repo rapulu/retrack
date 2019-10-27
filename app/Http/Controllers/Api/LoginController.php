@@ -38,7 +38,7 @@ class LoginController extends Controller
 
         $token = auth()->attempt($creds);
 
-        return LoginResource($token);
+        return LoginResource::collection($token);
     }
 
 
