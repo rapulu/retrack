@@ -8,6 +8,7 @@ use JWTAuthException;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\LoginResource;
+use App\Http\Requests\LoginRequest;
 
 class LoginController extends Controller
 {
@@ -32,10 +33,12 @@ class LoginController extends Controller
         return $token;
     }
 
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        return $request;
+
         $creds = $request->only(['email', 'password']);
+
+        return $creds;
 
         if(!$token = auth()->attempt($creds)){
             return response()->json(['error' => 'Incorrect email/password']);
